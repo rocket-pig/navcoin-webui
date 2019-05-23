@@ -4,6 +4,15 @@ This is a _fork_ of the repository: https://github.com/Encrypt-S/navpi.
 
 The point is to create a local webUI that uses a remote Navcoin node as the back end, enabling a GUI to your staking seedbox so you can vote, make transactions, etc without needing to ssh and use navcoin-cli.
 
+## Installation Instructions (Debian-ish only currently):
+- `sudo apt install php-fpm php-curl qrencode` (99% will work without qrencode, just no QR codes for wallet addresses)
+- ssh to your navcoin node, and edit ~/.navcoin4/navcoin.conf.  add a `rpcuser=<username>` and `rpcpassword=<password>` in there.
+- `nano libs/config.php` and make the user/pass match what you used above.
+- lastly and most importantly, forward a local port to your RPC port on remote navcoin node:
+`ssh -L 44444:localhost:44444 -N <IP of your navcoin node here>`
+- `./run.sh` will start the webui at http://localhost:10234 !
+
+
 For now, everything below this line is the original navpi github for historical whatevers. I'll update this space with more installation instructions as the commits progress.
 
 ###################################
