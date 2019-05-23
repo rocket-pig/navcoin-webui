@@ -10,13 +10,15 @@ So you can vote, transact, etc graphically and still host a stakebox remotely..
 - `sudo apt install php-fpm php-curl qrencode` (99% will work without qrencode, just no QR codes for wallet addresses)
 - RPC Password: either (1) set `rpcuser` and `rpcpassword` in navcoin.conf, OR (2) copy stakebox `.cookie` file:
 
-1 ssh to your navcoin node, and edit ~/.navcoin4/navcoin.conf.  add a `rpcuser=<username>` and `rpcpassword=<password>` in there.
+(1) ssh to your navcoin node, and edit ~/.navcoin4/navcoin.conf.  add a `rpcuser=<username>` and `rpcpassword=<password>` in there.
 - `nano libs/config.php` and make the user/pass match what you used above.
 
 OR:
-2 `scp <navcoin node>:~/.navcoin4/.cookie .`
+
+(2) `scp <navcoin node>:~/.navcoin4/.cookie .`
 
 - lastly and most importantly, forward a local port to your RPC port on remote navcoin node:
+
 `ssh -L 44444:localhost:44444 -N <IP of your navcoin node here>`
 - `./run.sh` will start the webui at http://localhost:10234 !
 
