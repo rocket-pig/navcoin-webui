@@ -9,7 +9,7 @@ function changecurrency(){
 	global $newLongCurrency ;
 	global $newSymbol ;
 
-	$currencylocation = "/home/stakebox/UI/currency.php" ;
+	$currencylocation = "currency.php" ;
 
 	if (is_readable($currencylocation) == FALSE)
 		die ("The currency file must be writable.") ;

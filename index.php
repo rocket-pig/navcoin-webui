@@ -44,7 +44,7 @@ if($primary != ""){
 		$address = $coin->getaddressesbyaccount("")[0];
 		
 		// Duplicated code from setPrimary, as we can't access the function ----------------
-		$primaryLocation = "/home/stakebox/UI/primary".$currentWallet."address.php";
+		$primaryLocation = "primary".$currentWallet."address.php";
 		// Open the file and erase the contents if any
 		$fp = fopen($primaryLocation, "w");
 		// Write the data to the file
@@ -162,8 +162,8 @@ if ($currentWallet == NavCoin){
 		<!--<a href='update' class='btn btn-default' role='button'>A new update to the WebUI is available, click to get it.</a>-->
 	<?php endif; ?>
 	</div>
-     <?php if(file_exists("/home/stakebox/UI/".$currentWallet."notes.php")){
-       include('/home/stakebox/UI/'.$currentWallet.'notes.php');
+     <?php if(file_exists("".$currentWallet."notes.php")){
+       include(''.$currentWallet.'notes.php');
 	echo "<div class='col-lg-5'>
 	  <div class='form-group'>
 	  <form action='notes' method='POST'><input type='hidden'>

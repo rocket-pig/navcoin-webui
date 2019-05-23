@@ -1,8 +1,8 @@
 <?php
 
-	require("/home/stakebox/UI/config.php");
+	require("config.php");
 	require("jsonRPCClient.php");	
-	include("/home/stakebox/UI/email.php");
+	include("email.php");
 	include("diskusage.php");
 
 	session_start();
@@ -19,7 +19,7 @@
 
 	$transactionHash = $_GET["transactionHash"];
 
-	$transactionFile = "/home/stakebox/UI/latest".$currentWallet."Transaction.php";
+	$transactionFile = "latest".$currentWallet."Transaction.php";
 
 	include("$transactionFile");
 

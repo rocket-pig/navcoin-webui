@@ -3,7 +3,7 @@ include ("header.php");
 include ("pass.php");
 
 $filename = time() . "_wallet.dat";
-$destination2 = "/home/stakebox/UI/backup/" . $filename;
+$destination2 = "backup/" . $filename;
 ?>
 
 <?php

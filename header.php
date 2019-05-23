@@ -6,8 +6,8 @@
 	require("libs/config.php");
 	require("jsonRPCClient.php");
 	require("printarray.php");
-	require("/home/stakebox/UI/currency.php");
-#	include("/home/stakebox/UI/email.php");
+	require("currency.php");
+#	include("email.php");
 	include("diskusage.php");
 
 	//hard set currency to usd
@@ -67,8 +67,8 @@
 	$data1 = json_decode($rawData1);
 	$fiatBTC = $data1->price;
 
-	$lastRunLog = '/home/stakebox/UI/lastrun';
-	$versionLocation = '/home/stakebox/UI/version.php';
+	$lastRunLog = 'lastrun';
+	$versionLocation = 'version.php';
 
 	if(!file_exists("$lastRunLog")){
 		$file = fopen("$lastRunLog","w");
@@ -104,7 +104,7 @@
 	    }
 	}
 	*/
-$lockStateLocation = "/home/stakebox/UI/".$currentWallet."lockstate.php";
+$lockStateLocation = "".$currentWallet."lockstate.php";
 
 function changeLockState(){
 
@@ -127,8 +127,8 @@ function changeLockState(){
   	fclose($fp);
 }
 
-include("/home/stakebox/UI/version.php");
-include("/home/stakebox/UI/primary".$currentWallet."address.php");
+include("version.php");
+include("primary".$currentWallet."address.php");
 
 try {
 	$coinGetInfo = $coin->getinfo();
@@ -164,7 +164,7 @@ if($coinGetInfo) {
 
 }
 
-include("/home/stakebox/UI/".$currentWallet."lockstate.php");
+include("".$currentWallet."lockstate.php");
 
 ?>
 

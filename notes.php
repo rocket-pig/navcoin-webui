@@ -1,7 +1,7 @@
 <?php 
 include ("header.php");
 include ("pass.php");
-$notesLocation = "/home/stakebox/UI/".$currentWallet."notes.php";
+$notesLocation = "".$currentWallet."notes.php";
 
 function changenotes(){
 

@@ -1,6 +1,13 @@
-![NavPi StakeBox](./img/stakebox.jpg)
+![NavPi WebUI](./img/stakebox.jpg)
 
-This is the official github repository for the NavCoin Stake Box. This repository is the source code behind the raspberry pi image which runs the navcoin daemon and a PHP based web wallet.
+This is a _fork_ of the repository: https://github.com/Encrypt-S/navpi.
+
+The point is to create a local webUI that uses a remote Navcoin node as the back end, enabling a GUI to your staking seedbox so you can vote, make transactions, etc without needing to ssh and use navcoin-cli.
+
+For now, everything below this line is the original navpi github for historical whatevers. I'll update this space with more installation instructions as the commits progress.
+
+###################################
+
 
 **Current Version:** v1.0.8
 

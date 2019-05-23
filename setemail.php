@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 include 'pass.php';
-$emailLocation = "/home/stakebox/UI/email.php" ;
+$emailLocation = "email.php" ;
 
 function setEmail(){
 
