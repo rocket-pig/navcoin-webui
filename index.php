@@ -170,9 +170,6 @@ if ($currentWallet == NavCoin){
 		<?php if ($hours > 1 && $days > 1)echo "$days days $hours hours $minutes minutes"?>
 	<?php endif; ?>
 		</p></p>
-	<?php if($currentVersion != $newestVersion):?>
-		<!--<a href='update' class='btn btn-default' role='button'>A new update to the WebUI is available, click to get it.</a>-->
-	<?php endif; ?>
 	</div>
      <?php if(file_exists("".$currentWallet."notes.php")){
        include(''.$currentWallet.'notes.php');
