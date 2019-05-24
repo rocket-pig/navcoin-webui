@@ -246,7 +246,7 @@ include("".$currentWallet."lockstate.php");
 		$coininfo = $coin->getinfo();
 	} catch(exception $e) {
 		echo "<!-- $e -->";
-		echo "<br><p class='bg-danger'><b>Error: Cannot connect to remote RPC..</b></p>";
+		echo "<br><p class='bg-danger'><b>Error: Cannot connect to remote RPC.  Have you forwarded local port?</b></p>";
 	}
 	//if($dp>97){
 	//	echo "<br><p class='bg-danger'><b>NOTICE: Your disk is nearing capacity, it is currently ".$dp."% full, with ".$df." free space remaining!</b></p>";
