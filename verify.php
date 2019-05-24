@@ -1,39 +1,20 @@
 <?php
 
-include ('passconfig.php') ;
 
 function verifyPassword($password)
-
 {
-	
-	
-
-	global $encryptedpasswd ;
-
-	// read encrypted password
-
-	$encryptedpasswd = getpass() ;
-
- 	if ((crypt($password,'$5$rounds=5000$saltgoeshere$') ==  $encryptedpasswd) )
-
-
-	{ 
+    global $pass;
+    include ("libs/config.php");
+    if ($password === $pass){
 	return ('right') ;
-
-	}
- 	else
-	{     	
-	return ('false') ;
- 	}
-
-      
+    }
 }
 
 function getpass()
 {
-	global  $passwordlocation;
 
-	include ("$passwordlocation");
-	return($passwd);
+	include ("libs/config.php");
+
+	return($pass);
 }
 ?>

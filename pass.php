@@ -32,19 +32,21 @@ else
 }
 if ($showlogin) {
 ?>
-<div class="row">
-<div class="col-lg-6">
-   <form name="sql-data" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
-      <div class="input-group">
-         <span class="input-group-btn">
-	    <button class='btn btn-default' type="submit" value="Submit">Submit</button>
+<div class='row'>
+<div class='col-lg-6'>
+   <form name='sql-data' method='post' action='<?php $_SERVER['PHP_SELF'] ?>'>
+      <div class='input-group'>
+         <span class='input-group-btn'>
+	    <button class='btn btn-default' type='submit' value='Submit'>Submit</button>
          </span>
-	    <input class="form-control" type="password" name="pass" value ="" placeholder="Enter your password to continue" maxlength="60" size="30"> 
+	    <input class='form-control' type='password' name='pass' value = '<?= $encryptedpasswd ?>' maxlength='60' size='30'> 
       </div><!-- /input-group -->
    </form>
 </div><!-- /.col-lg-6 -->
 </div>
 </div>
+
+?>
 <?php include ("footer.php");?>
 <?php
 }

@@ -1,11 +1,12 @@
 <?php
-        // where is your .navcoin4/.cookie? 
+
+        // where is your .navcoin4/.cookie?
         $navcookie = ".cookie";
 
 
         // get user/pass from .navcoin4/.cookie:
         $user =  explode(":",file_get_contents($navcookie))[0];
-        $pass =  urlencode(explode(":",file_get_contents($navdir.".cookie"))[1]);
+        $pass =  urlencode(explode(":",file_get_contents($navcookie))[1]);
 
         $wallets = array();
         $wallets['NavCoin'] = array(

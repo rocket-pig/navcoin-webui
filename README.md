@@ -4,10 +4,10 @@ This is a _fork_ of the repository: https://github.com/Encrypt-S/navpi.
 
 This is a localhost web interface to a remote navcoin node.
 
-So you can vote, transact, etc graphically and still host a stakebox remotely..
+So one can vote, transact etc with GUI while still hosting navcoin node remotely.
 
 ## Installation Instructions (Debian-ish only currently):
-- `sudo apt install php-fpm php-curl qrencode` (99% will work without qrencode, just no QR codes for wallet addresses)
+- `sudo apt install php-fpm php-curl qrencode` (basic php stuff, QRencode for scannable QR codes for addresses)
 - RPC Password: either (1) set `rpcuser` and `rpcpassword` in navcoin.conf, OR (2) copy stakebox `.cookie` file:
 
 (1) ssh to your navcoin node, and edit ~/.navcoin4/navcoin.conf.  add a `rpcuser=<username>` and `rpcpassword=<password>` in there.
@@ -16,6 +16,7 @@ So you can vote, transact, etc graphically and still host a stakebox remotely..
 OR:
 
 (2) `scp <navcoin node>:~/.navcoin4/.cookie .`
+- the webui will read from .cookie file and log you in just by pressing enter.
 
 - lastly and most importantly, forward a local port to your RPC port on remote navcoin node:
 
