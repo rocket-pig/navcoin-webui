@@ -216,7 +216,7 @@ include("".$currentWallet."lockstate.php");
 					<li><a href="sendcoins">Send Coins</a></li>
 					<li><a href="control">Control</a></li>
 					<li><a href="help">Help</a></li>
-					<li><a href="community-fund">Community Fund</a></li>
+					<li><a href="getcommunityfundinfo">Community Fund</a></li>
 				</ul>
 				<div class="navbar-right">
 					<p class="navbar-text"><?php 	echo "Current price is <b id='price'>{$priceBtc}</b> BTC"; ?></p>

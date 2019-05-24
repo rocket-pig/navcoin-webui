@@ -17,7 +17,7 @@ include ("pass.php");
             <a href="allcommands" class='btn btn-default' role='button'>All Commands</a>
             <a href="setpass" class='btn btn-default' role='button'>Change UI Password</a>
             <a href="fixorphans" class='btn btn-default' role='button'>Fix Orphans</a>
-            <a href="getcommunityfundinfo" class='btn btn-default' role='button'>Community Fund Infos</a>
+            <a href="community-fund" class='btn btn-default' role='button'>Proposal / Payment Request</a>
          </div><!-- /.row -->
       </div><!-- /.padding -->
       <div style="padding: 5px 15px 5px;">
@@ -35,31 +35,6 @@ include ("pass.php");
          </div><!-- /.row -->
       </div><!-- /.padding -->
 </div><!-- /.well -->
-
-<div class="well">
-   <b><a name="navtech">NAVTech</a></b>
-      <div style="padding: 5px 15px 5px;">
-         <div class="row">
-            <div class="col-lg-2">
-               <form action="listanonservers" method="POST"><input type="hidden">
-                  <div class="input-group">
-                     <button class='btn btn-default' type="submit" value="listanonservers">Manage NAVTech Servers</button>
-                  </div><!-- /input-group -->
-               </form>
-            </div><!-- /.col-lg-2 -->
-	    <div class="col-lg-8">
-               <form action="addanonserver" method="POST"><input type="hidden">
-                  <div class="input-group">
-                     <span class="input-group-btn">
-                        <button class='btn btn-default' type="submit" value="addanonserver">Add NAVTech Server</button>
-                     </span>
-                        <input class="form-control" type="text" name="server" placeholder="Enter Server (address:port)" >
-                  </div><!-- /input-group -->
-               </form>
-            </div><!-- /.col-lg-8 -->
-          </div>
-        </div>
-      </div>
 
 <div class="well">
    <b><a name="accounts&addresses">Accounts & Addresses</a></b>
