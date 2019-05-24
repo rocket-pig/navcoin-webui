@@ -52,16 +52,23 @@ if ($currentWallet == NavCoin){
 	$x = array_reverse($stakinginfo);
 	$time = $x['expectedtime'];
 }
-
-	$days = floor($time / 86400);
-	$hours = floor(($time / 3600) % 24);
-	$minutes = floor(($time / 60) % 60);
-	$fiatValue = ($bal1 * $priceUsd);
-	$fiatValue = sprintf("%01.2f", $fiatValue);
-	$btcValue = ($bal1 * $priceBtc);
-	$btcValue = sprintf("%01.8f", $btcValue);
-	$img = shell_exec("qrencode --output=- -l H -d 144 -s 50 -m 1 $address"); $imgData = "data:image/png;base64," . base64_encode($img);
-	$fiatValue = number_format($fiatValue);
+    $days = floor($time / 86400);
+    $hours = floor(($time / 3600) % 24);
+    $minutes = floor(($time / 60) % 60);
+    $fiatValue = ($bal1 * $priceUsd);
+    $fiatValue = sprintf("%01.2f", $fiatValue);
+    $unfiatValue = ($bal4 * $priceUsd);
+    $unfiatValue = sprintf("%01.2f", $unfiatValue);
+    $btcValue = ($bal1 * $priceBtc);
+    $btcValue = sprintf("%01.8f", $btcValue);
+    $unbtcValue = ($bal4 * $priceBtc);
+    $unbtcValue = sprintf("%01.8f", $unbtcValue);
+    $img = shell_exec("qrencode --output=- -l H -d 144 -s 50 -m 1 $address"); $imgData = "data:image/png;base64," . base64_encode($img);
+    $combined_total_fiat_value = $fiatValue + $unfiatValue;
+    $combined_total_btc_value = $btcValue + $unbtcValue;
+    $fiatValue = number_format($fiatValue);
+    $unfiatValue = number_format($unfiatValue);
+    $combined_total_fiat_value = number_format($combined_total_fiat_value);
 ?>
 <div class="row">
 	<?php
@@ -77,15 +84,35 @@ if ($currentWallet == NavCoin){
 					</small>
 				</div>
 			</div>";
- 	
 	?>
 
-	<div class="col-lg-6">
-		<h3>Available Balance: <font color='green'><?php echo number_format($bal1); ?></font> <?php echo $currentWallet; ?></h3>
-		<h4>Unavailable Due To Staking: <font color='red'><?php echo $bal4; ?></font> <?php echo $currentWallet; ?></h4>
-		<h4>BTC Value: <font color='green'><?php echo "{$btcValue}"; ?></font></h4>
-		<h4><?php echo $longCurrency; ?> Value: <font color='green'><?php echo "{$symbol}{$fiatValue}"; ?></font></h4><br>
-		<div class="col-lg-8">
+    <div class="col-lg-6">
+        <h3>Available Balance: <font color='green'><?php echo number_format($bal1); ?></font> <?php echo $currentWallet; ?></h3>
+        <?php
+            if ($bal4 > 0)
+                echo "
+                <h4>Unavailable Due To (Cold) Staking: <font color='red'><?php echo $bal4; ?></font> <?php echo $currentWallet; ?></h4>
+                ";
+         ?>
+        <h4>BTC Value: <font color='green'><?php echo "{$btcValue}"; ?></font>
+        <?php
+            if ($bal4 > 0)
+                echo "
+
+               | <font color='red'><?php echo '{$symbol}{$unbtcValue}'; ?></font>
+               ";
+        ?> </h4>
+
+        <h4><?php echo $longCurrency; ?> Value: <font color='green'><?php echo "{$symbol}{$fiatValue}"; ?></font>
+        <?php
+            if ($bal4 > 0)
+                echo "
+
+               | <font color='red'><?php echo '{$symbol}{$unfiatValue}'; ?></font>
+               ";
+        ?> </h4>
+        <h4>Combined Total: <u><?php echo "{$combined_total_btc_value} BTC ({$symbol}{$combined_total_fiat_value})"; ?></u></h4><br/>
+        <div class="col-lg-8">
     	<form action="lockcontrol">
        		<button class='btn btn-default btn-block'>Your Wallet Is <?php print($lockState)?> Click To Change</button>
     	</form>
