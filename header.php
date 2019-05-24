@@ -8,7 +8,7 @@
 	require("printarray.php");
 	require("currency.php");
 #	include("email.php");
-	include("diskusage.php");
+#	include("diskusage.php");
 
 	//hard set currency to usd
 
@@ -168,7 +168,7 @@ include("".$currentWallet."lockstate.php");
 
 ?>
 
-<html><head><title><?php echo $price; echo " BTC/"; echo $ticker;?></title>
+<html><head><title>Navcoin WebUI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='css/slate.css' rel='stylesheet' >
 <link href="css/main.css" rel="stylesheet" >
@@ -187,9 +187,9 @@ include("".$currentWallet."lockstate.php");
 		var data_from_ajax;
 		var refreshRate=setInterval(function(){fetchPrice()},180000);
 		function fetchPrice() {
-			$.get('price.php?pair='+pair, function(data) {
+			$.get('price.php', function(data) {
 				data_from_ajax = data;
-				document.title = data_from_ajax+" BTC/"+ticker;
+				//document.title = data_from_ajax+" BTC/"+ticker;
 				document.getElementById("price").innerHTML = data_from_ajax;
 			});
 		}
@@ -246,9 +246,9 @@ include("".$currentWallet."lockstate.php");
 		$coininfo = $coin->getinfo();
 	} catch(exception $e) {
 		echo "<!-- $e -->";
-		echo "<br><p class='bg-danger'><b>Error: Your wallet server is not running. Please restart your StakeBox via the power option in the server section on the control page. If you have just restarted it, or powered it on, please allow it up to several minutes before attempting to restart it again.</b></p>";
+		echo "<br><p class='bg-danger'><b>Error: Cannot connect to remote RPC..</b></p>";
 	}
-	if($dp>97){
-		echo "<br><p class='bg-danger'><b>NOTICE: Your disk is nearing capacity, it is currently ".$dp."% full, with ".$df." free space remaining!</b></p>";
-	}
+	//if($dp>97){
+	//	echo "<br><p class='bg-danger'><b>NOTICE: Your disk is nearing capacity, it is currently ".$dp."% full, with ".$df." free space remaining!</b></p>";
+	// }
 ?>
