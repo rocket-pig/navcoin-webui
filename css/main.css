@@ -63,6 +63,43 @@ p {
     border-top-color: #555;
     border-bottom-color: #555;
 }
+
+/* a couple additions for the proposals page. */
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+
+.progress-bar-green {
+      background-color: green !important;
+}
+.progress-bar-red {
+      background-color: red !important;
+}
+.progress-bar-grey {
+      background-color: grey !important;
+}
+
+.float-right {
+    float:right
+}
+.float-left {
+    float:left
+}
+.card {
+    margin-bottom: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+/* end of additions for proposals / community fund page. */
+
+
 /* mobile version */
 .navbar-default .navbar-toggle {
     border-color: #337ab7;

@@ -1,7 +1,7 @@
 <?php
 	//$pair = ($_GET['pair']);
     $pair = "NAV-BTC";
-	fetch price in BTC price of current coin
+	//fetch price in BTC price of current coin
 	$curl = curl_init();
 	curl_setopt($curl, CURLOPT_URL, "https://www.cryptonator.com/api/full/".$pair);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

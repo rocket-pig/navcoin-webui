@@ -46,7 +46,7 @@ if ($showlogin) {
 </div>
 </div>
 
-?>
+
 <?php include ("footer.php");?>
 <?php
 }
