@@ -6,7 +6,9 @@ This is a localhost web interface to a remote navcoin node.
 
 So one can vote, transact etc with GUI while still hosting navcoin node remotely.
 
-## Installation Instructions (Debian-ish only currently):
+See changelog here: https://github.com/rocket-pig/navcoin-webui/commits
+
+## Installation Instructions (*nix ish only atm)
 - `sudo apt install php-fpm php-curl qrencode` (basic php stuff, QRencode for scannable QR codes for addresses)
 - RPC Password: either (1) set `rpcuser` and `rpcpassword` in navcoin.conf, OR (2) copy stakebox `.cookie` file:
 
@@ -29,7 +31,7 @@ OR:
 
 For now, everything below this line is the original navpi github for historical whatevers. I'll update this space with more installation instructions as the commits progress.
 
-###################################
+--------------------------------------------
 
 
 **Current Version:** v1.0.8
